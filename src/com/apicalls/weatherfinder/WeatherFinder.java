@@ -23,6 +23,11 @@ public class WeatherFinder {
 			double latitude = (double) cityLocation.get("latitude");
 			double longitude = (double) cityLocation.get("longitude");
 
+			System.out.println();
+			System.out.println("City: " + city);
+			System.out.println("Latitude: " + latitude);
+			System.out.println("Longitude: " + longitude);
+
 			// display weather data
 			displayWeatherData(latitude, longitude);
 
@@ -85,9 +90,6 @@ public class WeatherFinder {
 
 			JSONObject currentWeatherJson = (JSONObject) jsonObject.get("current");
 
-			String time = (String) currentWeatherJson.get("time");
-			System.out.println("Current Time: " + time);
-
 			double temperature = (double) currentWeatherJson.get("temperature_2m");
 			System.out.println("Current Temperature (C): " + temperature);
 
@@ -95,7 +97,7 @@ public class WeatherFinder {
 			System.out.println("Relative Humidity: " + relativeHumidity);
 
 			double windSpeed = (double) currentWeatherJson.get("wind_speed_10m");
-			System.out.println("Weather Description: " + windSpeed);
+			System.out.println("Wind Speed: " + windSpeed);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
